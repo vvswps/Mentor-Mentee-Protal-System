@@ -7,7 +7,7 @@
 			margin: 0;
 			padding: 0;
 			font-family: Arial, sans-serif;
-			background-image: url("https://img.freepik.com/free-vector/coach-speaking-before-audience-mentor-presenting-charts-reports-employees-meeting-business-training-seminar-conference-vector-illustration-presentation-lecture-education_74855-8294.jpg?w=1380&t=st=1680328931~exp=1680329531~hmac=34716141ca02a4844227c7feb6665b7f0cb9ca5a60b57a53205375cd62c8e3c5");
+			background-image: url("background.jpg");
 			background-size: cover;
 			background-position: center;
 		}
