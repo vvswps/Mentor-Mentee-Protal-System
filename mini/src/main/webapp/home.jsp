@@ -19,15 +19,15 @@
 			height: 100vh;
 		}
 		h1 {
-			font-size: 48px;
+			font-size: 60px;
 			font-weight: bold;
 			margin: 0;
-			color: #444;
+			color: #000000;
 		}
 		p {
-			font-size: 24px;
+			font-size: 26px;
 			margin: 10px 0 0 0;
-			color: #777;
+			color: black;
 			text-align: center;
 		}
 		.btn {

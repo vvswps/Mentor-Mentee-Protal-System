@@ -83,7 +83,7 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Tatwadarshi Login</h2>
+		<h2>Student Login</h2>
 		<form method="post" action="studentDashboard.jsp">
 			<label for="id">Student ID</label>
 			<input type="text" id="id" name="id" required>
