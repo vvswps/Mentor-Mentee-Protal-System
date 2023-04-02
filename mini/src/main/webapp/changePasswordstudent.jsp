@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h1>Update Password</h1>
-	<form method="post" action="updatePasswordProcess.jsp">
+	<form method="post" action="updatePasswordProcessstudent.jsp">
 		<label for="id">Student ID:</label>
 		<input type="text" id="id" name="id"><br><br>
 		<label for="oldPassword">Old Password:</label>

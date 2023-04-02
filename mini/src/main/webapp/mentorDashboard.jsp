@@ -26,7 +26,7 @@ try {
     if (rs.next()) {
         // Authentication successful, set session attribute and redirect to home page
         session.setAttribute("mentorID", mentorID);
-        response.sendRedirect("account.jsp");
+        response.sendRedirect("mentoraccount.jsp");
     } else {
         // Authentication failed, display error message
         out.println("<script>alert('Invalid username or password.');</script>");

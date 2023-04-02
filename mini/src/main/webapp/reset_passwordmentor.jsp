@@ -1,12 +1,13 @@
 <%@ page import="java.sql.*" %>
 <%
 // Get the parameters from the form
-String studentID = request.getParameter("studentID");
+String mentorID = request.getParameter("mentorID");
+String key = request.getParameter("key");
 String new_password = request.getParameter("new_password");
 String confirm_password = request.getParameter("confirm_password");
 
 // Check if the form was submitted
-if (studentID != null && new_password != null && confirm_password != null) {
+if (mentorID != null && key != null && new_password != null && confirm_password != null) {
 	// Connect to the database
 	Connection conn = null;
 	PreparedStatement stmt = null;
@@ -16,17 +17,17 @@ if (studentID != null && new_password != null && confirm_password != null) {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost/lab_app", "root", "root");
 		
 		// Check if the username exists in the database
-		stmt = conn.prepareStatement("SELECT * FROM students WHERE studentID = ?");
-		stmt.setString(1, studentID);
+		stmt = conn.prepareStatement("SELECT * FROM mentors WHERE mentorID = ?");
+		stmt.setString(1, mentorID);
 		rs = stmt.executeQuery();
 		
 		if (rs.next()) {
 			// Check if the new password and confirm password match
 			if (new_password.equals(confirm_password)) {
 				// Update the password in the database
-				stmt = conn.prepareStatement("UPDATE students SET password = ? WHERE studentID = ?");
+				stmt = conn.prepareStatement("UPDATE mentors SET password = ? WHERE mentorID = ?");
 				stmt.setString(1, new_password);
-				stmt.setString(2, studentID);
+				stmt.setString(2, mentorID);
 				stmt.executeUpdate();
 				
 				// Display a success message
@@ -54,6 +55,13 @@ if (studentID != null && new_password != null && confirm_password != null) {
 	}
 }
 %>
+<!DOCTYPE html>
 <html>
+<head>
+	<title>Password Update Success</title>
+</head>
 <body>
-<a href="studentLogin.jsp">Back To Login Page</a></body></html>
+	<a href="mentorLogin.jsp">Back to Login Page</a>
+</body>
+</html>
+

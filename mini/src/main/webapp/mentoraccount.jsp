@@ -9,6 +9,6 @@
 <h1>WELCOME! PLEASE CHANGE YOUR PASSWORD!</h1>
 </head>
 <body>
-<a href="changePassword.jsp">CHANGE PASSWORD!</a> 
+<a href="changePasswordmentor.jsp">CHANGE PASSWORD!</a> 
 </body>
 </html>

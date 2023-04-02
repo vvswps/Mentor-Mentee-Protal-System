@@ -4,28 +4,35 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Student Login</title>
+	<title>Mentor Login</title>
 	<style>
 		body {
-			background-image: url("mentorlogin.jpg");
-			background-size: cover;
-			background-repeat: no-repeat;
+			background-color: #ffffff;
 		}
 		.container {
 			position: absolute;
-			top: 50%;
-			backdrop-filter: blur(15px);
-			border: 2px solid rgba(255,255,255,0.5);
-			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-			left: 50%;
-			right: 10%;
-			transform: translate(-50%, -50%);
-			max-width: 500px;
+			top:20%;
+			left: 65%;
+			/* right: 50%; */
+			/* transform: translate(-50%, -50%); */
+			max-width: 300px;
 			padding: 20px;
-			
+			background-color: #ffffff;
 			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 			border-radius: 5px;
 			font-family: Arial, sans-serif;
+		}
+		.img1{
+			height:50%;
+			width:50%;
+			padding:10px;
+			margin-left: 20%;
+		}
+		.img2{
+			height:100%;
+			width:50%;
+			margin-left:5%;
+
 		}
 		h2 {
 			text-align: center;
@@ -37,7 +44,7 @@
 		}
 		label {
 			font-weight: bold;
-			margin-bottom: 8px;
+			/* margin-bottom:5px; */
 		}
 		input[type=text], input[type=password] {
 			width: 100%;
@@ -45,34 +52,35 @@
 			margin: 8px 0;
 			display: inline-block;
 			border: none;
-			border-bottom: 2px solid rgba(255,255,255,0.5);
+			/* border-bottom: 2px solid #4CAF50; */
 			box-sizing: border-box;
 			font-size: 16px;
 			color: #444;
 			background-color: #f2f2f2;
-			background: transparent;
 			border-radius: 0;
 			transition: all 0.3s ease-in-out;
 		}
 		input[type=text]:focus, input[type=password]:focus {
 			outline: none;
-			border-bottom: 2px solid #2ecc71;
-			background-color: #fff;
+			border-bottom: 2px solid #007bff;
+			/* background-color: #0f0e0e; */
 		}
 		button[type=submit] {
-			background-color: #4CAF50;
-			color: white;
-			padding: 12px 20px;
+		
+			background-color: #007bff;
+			color: rgb(255, 255, 255);
+			padding: 10px 60px;
 			border: none;
 			border-radius: 50px;
 			cursor: pointer;
 			margin-top: 16px;
 			transition: all 0.3s ease-in-out;
-			align-self: flex-end;
+			align-self: center;
 			font-size: 16px;
+			font-weight: bold;
 		}
 		button[type=submit]:hover {
-			background-color: #2ecc71;
+			background-color: #0069d9;
 		}
 		a {
 			color: dodgerblue;
@@ -82,22 +90,26 @@
 			transition: all 0.3s ease-in-out;
 		}
 		a:hover {
-			color: #2ecc71;
+			color: #0069d9;
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<h2>Mentor Login</h2>
+		<img class="img1" src="user.png">
 		<form method="post" action="mentorDashboard.jsp">
 			<label for="id">Mentor ID</label>
-			<input type="text" id="id" name="id" required>
+			<input type="text" placeholder="Enter Your ID" id="id" name="id" required>
 			<label for="password">Password</label>
-			<input type="password" id="password" name="password" required>
+			<input type="password" placeholder="Enter Your Password" id="password" name="password" required>
 			<button type="submit">Login</button>
 		</form>
 		
-<a href="forgotPassword.jsp">Forgot password?</a>
+<a href="forgotPasswordmentor.jsp">Forgot Password?</a>
 	</div>
+<div class="container2">
+	<img class=img2 src="mentor.jpg">
+</div>
 </body>
 </html>

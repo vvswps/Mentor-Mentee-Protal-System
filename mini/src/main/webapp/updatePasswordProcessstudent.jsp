@@ -27,7 +27,7 @@ try {
         updateStmt.setString(1, newPassword);
         updateStmt.setString(2, studentID);
         updateStmt.executeUpdate();
-        response.sendRedirect("updateSuccess.jsp");
+        response.sendRedirect("updateSuccessstudent.jsp");
     } else {
         // Student does not exist with old password, display error message
         out.println("Invalid ID or password.");
