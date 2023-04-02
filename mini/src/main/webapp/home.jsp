@@ -23,6 +23,22 @@
 			font-weight: bold;
 			margin: 0;
 			color: #000000;
+			overflow: hidden; /* Ensures the content is not revealed until the animation */
+  			border-right: .15em solid black; /* The typwriter cursor */
+  			white-space: nowrap; /* Keeps the content on a single line */
+  			margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  			animation: 
+    		typing 2.5s steps(40, end),
+    		blink-caret .75s step-end infinite;
+		}
+		@keyframes typing {
+  			from { width: 0 }
+  			to { width: 70% }
+		}
+		/* The typewriter cursor effect */
+		@keyframes blink-caret {
+  			from, to { border-color: transparent }
+ 			50% { border-color: orange; }
 		}
 		p {
 			font-size: 26px;
@@ -34,13 +50,13 @@
 			display: inline-block;
 			padding: 10px 20px;
 			border: none;
-			border-radius: 5px;
+			border-radius: 50px;
 			font-size: 18px;
 			font-weight: bold;
 			color: #fff;
 			background-color: #007bff;
 			cursor: pointer;
-			margin-top: 20px;
+			margin-top: 40px;
 			text-decoration: none;
 		}
 		.btn:hover {
@@ -63,7 +79,7 @@
 		.btn-container {
 			display: flex;
 			flex-direction: row;
-			margin-top: 20px;
+			margin-bottom: 80px;
 		}
 		.btn-container .btn:first-child {
 			margin-right: 20px;

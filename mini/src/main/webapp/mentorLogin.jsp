@@ -7,23 +7,22 @@
 	<title>Student Login</title>
 	<style>
 		body {
-			background-image: url("studentlogin.jpg");
+			background-image: url("mentorlogin.jpg");
 			background-size: cover;
 			background-repeat: no-repeat;
-			
-			
 		}
 		.container {
 			position: absolute;
 			top: 50%;
-			background: transparent;
+			backdrop-filter: blur(15px);
+			border: 2px solid rgba(255,255,255,0.5);
+			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 			left: 50%;
 			right: 10%;
 			transform: translate(-50%, -50%);
 			max-width: 500px;
 			padding: 20px;
-			backdrop-filter: blur(15px);
-			border: 2px solid rgba(255,255,255,0.5);
+			
 			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 			border-radius: 5px;
 			font-family: Arial, sans-serif;
@@ -51,19 +50,17 @@
 			font-size: 16px;
 			color: #444;
 			background-color: #f2f2f2;
+			background: transparent;
 			border-radius: 0;
 			transition: all 0.3s ease-in-out;
-			background: transparent;
-    
-    		outline: none;
 		}
 		input[type=text]:focus, input[type=password]:focus {
 			outline: none;
-			border-bottom: 2px solid #0000FF;
+			border-bottom: 2px solid #2ecc71;
 			background-color: #fff;
 		}
 		button[type=submit] {
-			background-color: #0000FF;
+			background-color: #4CAF50;
 			color: white;
 			padding: 12px 20px;
 			border: none;
@@ -91,9 +88,9 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Student Login</h2>
-		<form method="post" action="studentDashboard.jsp">
-			<label for="id">Student ID</label>
+		<h2>Mentor Login</h2>
+		<form method="post" action="mentorDashboard.jsp">
+			<label for="id">Mentor ID</label>
 			<input type="text" id="id" name="id" required>
 			<label for="password">Password</label>
 			<input type="password" id="password" name="password" required>
