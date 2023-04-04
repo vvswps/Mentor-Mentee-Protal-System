@@ -99,8 +99,8 @@
 		<h1>MENTOR MENTEE PORTAL SYSTEM</h1>
 		<p>A Web application that enhances Mentorship system in the NIET college campus</p>
 		<div class="btn-container">
-			<a href="studentLogin.jsp" class="btn">Student Login</a>
-			<a href="mentorLogin.jsp" class="btn">Mentor Login</a>
+			<a href="Login.jsp" class="btn">Login</a>
+			<a href="chooseRegister.jsp" class="btn">Register</a>
 		</div>
 	</div>
 	<div class="links-container">

@@ -1,36 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Student Login</title>
+	<title>Registration Form</title>
 	<style>
 		body {
-			background-color: #ffffff;
+			
+			
+			font-family: Arial, sans-serif;
+			background-image: url("studentregisterbackground.jpg");
+			background-size: cover;
+			
+			
 		}
-		.container {
+		.container1 {
 			position: absolute;
-			top:20%;
-			left: 65%;
+			top:17%;
+			left: 41.5%;
 			max-width: 300px;
 			padding: 20px;
 			background-color: #ffffff;
 			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 			border-radius: 5px;
 			font-family: Arial, sans-serif;
-		}
-		.img1{
-			height:50%;
-			width:50%;
-			padding:10px;
-			margin-left: 20%;
-		}
-		.img2{
-			height:100%;
-			width:60%;
-			margin-left:5%;
-
 		}
 		h2 {
 			text-align: center;
@@ -93,21 +87,22 @@
 	</style>
 </head>
 <body>
-	<div class="container">
-		<h2>Student Login</h2>
-		<img class="img1" src="user.png">
-		<form method="post" action="studentDashboard.jsp">
-			<label for="id">Student ID</label>
-			<input type="text" placeholder="Enter Your ID" id="id" name="id" required>
+	<div class="container1">
+		<h2>Mentee Registration</h2>
+		<form method="post" action="studentRegister.jsp">
+			<label for="studentID">ERP ID</label>
+			<input type="text" placeholder="Enter Your ERP ID" id="studentID" name="studentID" required>
+			<label for="name">Name</label>
+			<input type="text" placeholder="Enter Your Name" id="name" name="name" required>
 			<label for="password">Password</label>
 			<input type="password" placeholder="Enter Your Password" id="password" name="password" required>
-			<button type="submit">Login</button>
+			<label for="email">Email-id</label>
+			<input type="text" placeholder="Enter Your Email ID" id="email" name="email" required>
+			<label for="phoneno">Phone Number</label>
+			<input type="text" placeholder="Enter Your Phone No." id="phoneno" name="phoneno" required>
+			<button type="submit">Register</button>
 		</form>
 		
-<a href="forgotPasswordstudent.jsp">Forgot Password?</a>
 	</div>
-<div class="container2">
-	<img class=img2 src="side.jpg" height="100%" width="100%">
-</div>
 </body>
 </html>
