@@ -22,13 +22,18 @@ if (studentID != null && key != null && new_password != null && confirm_password
 		rs = stmt.executeQuery();
 		
 		if (rs.next()) {
+			if (!rs.getString("key").equals(key)) {
+				out.println("<script>window.alert('Invalid KEY.')</script>");
+	            return;
+	        }
 			// Check if the new password and confirm password match
 			if (new_password.equals(confirm_password)) {
 				// Update the password in the database
-				stmt = conn.prepareStatement("UPDATE students SET password = ? WHERE studentID = ?");
-				stmt.setString(1, new_password);
-				stmt.setString(2, studentID);
-				stmt.executeUpdate();
+				PreparedStatement updateStmt = conn.prepareStatement("UPDATE students SET password = ? WHERE studentID = ?");
+				updateStmt.setString(1, new_password);
+				updateStmt.setString(2, studentID);
+				updateStmt.executeUpdate();
+				updateStmt.close();
 				
 				// Display a success message
 				out.println("Password updated successfully.");

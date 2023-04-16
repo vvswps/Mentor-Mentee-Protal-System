@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Profile Login</title>
+<title>Profile Register</title>
 <style>
 * {
   box-sizing: border-box;
@@ -16,7 +16,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("2.jpg");
+  background-image: url("ProfileSelect.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -24,11 +24,12 @@ body, html {
   font-family: "Lucida Console", "Courier New", monospace;
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   position: absolute;
-  top: 0;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 1.7rem;
 }
 
 .wrapper {
@@ -48,6 +49,7 @@ body, html {
   align-items: flex-end;
   transition: 0.4s ease-out;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid darkblue
 }
 .card:hover {
   transform: translateY(20px);
@@ -90,9 +92,10 @@ body, html {
   opacity: 0;
   transform: translateY(30px);
   transition: 0.5s;
+  
 }
 .card .info h1 {
-  margin: 0px;
+margin-left: 65px;
 }
 .card .info p {
   letter-spacing: 1px;
@@ -109,6 +112,7 @@ body, html {
   font-weight: bold;
   cursor: pointer;
   transition: 0.4s ease;
+  margin-left: 78px;
 }
 .card .info button:hover {
   background: dodgerblue;

@@ -16,19 +16,24 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("2.jpg");
+  background-image: url("ProfileSelect.jpg");
   background-size: cover;
   background-position: center;
 }
 .header {
-  font-family: "Lucida Console", "Courier New", monospace;
+   
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+
   position: absolute;
-  top: 0;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .wrapper {
@@ -48,6 +53,7 @@ body, html {
   align-items: flex-end;
   transition: 0.4s ease-out;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid darkblue;
 }
 .card:hover {
   transform: translateY(20px);
@@ -92,7 +98,8 @@ body, html {
   transition: 0.5s;
 }
 .card .info h1 {
-  margin: 0px;
+  margin-left: 65px;
+  
 }
 .card .info p {
   letter-spacing: 1px;
@@ -109,6 +116,7 @@ body, html {
   font-weight: bold;
   cursor: pointer;
   transition: 0.4s ease;
+  margin-left: 88px;
 }
 .card .info button:hover {
   background: dodgerblue;

@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Student Login</title>
+	<title>Mentee Login</title>
 	<style>
 		body {
 			background-color: #ffffff;
@@ -94,7 +94,7 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Student Login</h2>
+		<h2>Mentee Login</h2>
 		<img class="img1" src="user.png">
 		<form method="post" action="studentDashboard.jsp">
 			<label for="id">Student ID</label>
