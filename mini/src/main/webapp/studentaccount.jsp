@@ -1,3 +1,6 @@
+<%@ page language="java" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +30,6 @@ nav{
   height: 100vh;
   left: 0;
   width: 90px;
-  /* width: 280px; */
   background: #fff;
   overflow: hidden;
   transition: 1s;
@@ -92,6 +94,7 @@ a:hover i{
 }
 
 /* MAin Section */
+/* Main Section */
 .main{
   position: relative;
   padding: 20px;
@@ -99,66 +102,31 @@ a:hover i{
 }
 .main-top{
   display: flex;
+  justify-content: space-between;
   width: 100%;
+  margin-bottom: 20px;
 }
-.main-top i{
-  position: absolute;
-  right: 0;
-  margin: 10px 30px;
-  color: rgb(110, 109, 109);
-  cursor: pointer;
+.main-top h1{
+  font-size: 28px;
+  font-weight: bold;
 }
-.main .users{
-  display: flex;
-  width: 100%;
-}
-.users .card{
-  width: 25%;
-  margin: 10px;
-  background: #fff;
-  text-align: center;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-.users .card img{
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
-.users .card h4{
-  text-transform: uppercase;
-}
-.users .card p{
-  font-size: 12px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-.users table{
-  margin:  auto;
-}
-.users .per span{
-  padding: 5px;
-  border-radius: 10px;
-  background: rgb(223, 223, 223);
-}
-.users td{
+.main-top p{
   font-size: 14px;
-  padding-right: 15px;
+  color: rgb(110, 109, 109);
 }
-.users .card button{
-  width: 100%;
-  margin-top: 8px;
-  padding: 7px;
-  cursor: pointer;
-  border-radius: 10px;
-  background: transparent;
-  border: 1px solid #4AD489;
+.main-content{
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.users .card button:hover{
-  background: #4AD489;
-  color: #fff;
-  transition: 0.5s;
+.main-content h2{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.main-content p{
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 
@@ -170,7 +138,7 @@ a:hover i{
       <ul>
         <li><a href="#" class="logo">
           <img src="user.png">
-          <span class="nav-item">Welcome!</span>
+          <span class="nav-item">Welcome!<%= session.getAttribute("name") %></span>
         </a></li>
         <li><a href="#">
           <i class="fas fa-menorah"></i>
@@ -214,11 +182,15 @@ a:hover i{
 
 
     <section class="main">
-      <div class="main-top">
-        <h1>Dashboard</h1>
+  <div class="main-top">
+    <h1>Dashboard</h1>
+	<p>Your email is <%= session.getAttribute("email") %>.</p>
+    
 
-        </div>
-      </section>
+  </div>
+  
+</section>
+
  
     
   </div>

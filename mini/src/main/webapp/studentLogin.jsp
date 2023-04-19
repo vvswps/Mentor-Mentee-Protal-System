@@ -42,7 +42,6 @@
 		}
 		label {
 			font-weight: bold;
-			/* margin-bottom:5px; */
 		}
 		input[type=text], input[type=password] {
 			width: 100%;
@@ -50,7 +49,6 @@
 			margin: 8px 0;
 			display: inline-block;
 			border: none;
-			/* border-bottom: 2px solid #4CAF50; */
 			box-sizing: border-box;
 			font-size: 16px;
 			color: #444;
