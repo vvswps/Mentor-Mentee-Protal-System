@@ -4,7 +4,7 @@
 	<title>MENTOR MENTEE PORTAL SYSTEM</title>
 	<style>
 		body {
-			margin: 0;
+			margin: 0; 
 			padding: 0;
 			font-family: Arial, sans-serif;
 			background-image: url("background.jpg");
