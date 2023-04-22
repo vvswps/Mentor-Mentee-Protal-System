@@ -4,7 +4,6 @@
 
 <%
 // Get user input from login form
-String mentorname = request.getParameter("name");
 String mentorID = request.getParameter("id");
 String password = request.getParameter("password");
 
@@ -25,6 +24,12 @@ try {
 
     if (rs.next()) {
         // Authentication successful, set session attribute and redirect to home page
+        String mentorname = rs.getString("mentorname");
+		String email = rs.getString("email");
+		String phoneno = rs.getString("phoneno");
+		session.setAttribute("mentorname", mentorname);
+		session.setAttribute("email", email);
+		session.setAttribute("phoneno", phoneno);
         session.setAttribute("mentorID", mentorID);
         response.sendRedirect("mentoraccount.jsp");
     } else {
@@ -38,5 +43,7 @@ try {
     conn.close();
 } catch (Exception e) {
     e.printStackTrace();
+    
 }
+
 %>

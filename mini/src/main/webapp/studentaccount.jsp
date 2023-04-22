@@ -30,7 +30,8 @@ nav{
   height: 100vh;
   left: 0;
   width: 90px;
-  background: #007bff;
+ /* background: #007bff; */
+ background-image: url("studentmenubackground.jpg");
   overflow: hidden;
   transition: 1s;
 }
@@ -78,10 +79,10 @@ nav .fas{
   margin-left: 10px;
 }
 a:hover{
-  background: #eee;
+  background: white;
 }
 a:hover i{
-  color: #34AF6D;
+  color: #007FFF;
   transition: 0.5s;
 }
 .logout{
@@ -129,16 +130,17 @@ a:hover i{
 }
 
 
+
 </style>
 </head>
 <body>
   <div class="container">
     <nav>
       <ul>
-        <li><a href="#" class="logo">
+        <li><a href="#Welcome" class="logo" onclick="loadContent('welcomestudent')" data-name="Welcome!">
           <img src="user.png">
           <span class="nav-item">Welcome!<br><%= session.getAttribute("name") %></span>
-        </a></li>
+        </a><br><br><br></li>
         
         <li><a href="#notifications" class="nav-link" onclick="loadContent('notificationsstudent')" data-name="Notifications">
           <i class="fas fa-bell"></i>
@@ -165,7 +167,7 @@ a:hover i{
           <span class="nav-item">Change Password</span>
         </a></li>
 
-        <li><a href="logOut.jsp" class="logout">
+        <li><a href="logOutstudent.jsp" class="logout">
           <i class="fas fa-sign-out-alt"></i>
           <span class="nav-item">Log out</span>
         </a></li>
@@ -174,12 +176,22 @@ a:hover i{
 
 
     <section class="main">
-  <div class="main-top">
-    <h1>Dashboard</h1>
-	<p>Your ERP ID is <%= session.getAttribute("studentID") %>.</p>
-    
+  <div class="main-top" id="Welcome">
+
+    <h1>Welcome</h1>
+	<p style="position: absolute; top: 20px; right: 60px;"> 
+    Your ERP ID is <%= session.getAttribute("studentID") %>
+</p>
+
   </div>
-  <div id="main-content"></div>
+  <div id="main-content"><div style="background-color: white; border-radius: 10px; padding: 20px; margin: 20px auto; max-width: 600px; text-align: center;">
+		<img src="user.png" alt="User Image" style="display: block; margin: 0 auto; max-width: 200px; border-radius: 50%;">
+		<h1>Welcome, <%= session.getAttribute("name") %>!</h1>
+		<p>Your Phone Number is <%= session.getAttribute("phoneno") %></p>
+		<p>Your Official Email is <%= session.getAttribute("email") %></p>
+		<p>Your student ID is <%= session.getAttribute("studentID") %></p>
+		
+	</div></div>
 </section>
   </div>
 <script>
@@ -205,6 +217,12 @@ a:hover i{
       mainTitle.textContent = name;
       mainContent.innerHTML = `<iframe src="${href}" style="width: 100%; height: 100%; border: none;"></iframe>`;
     });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var welcomeLink = document.querySelector("a[href='#Welcome']");
+    welcomeLink.classList.add("active");
   });
 </script>
 

@@ -53,7 +53,7 @@ try {
     psUpdatePersonalDetails.setString(14, localGuardianAddress);
     psUpdatePersonalDetails.setString(15, localGuardianContactNo);
     psUpdatePersonalDetails.setString(16, previousAchievement);
-psUpdatePersonalDetails.setString(17, studentID);
+	psUpdatePersonalDetails.setString(17, studentID);
 
 
     int rowsAffected = psUpdatePersonalDetails.executeUpdate();
@@ -68,37 +68,34 @@ psUpdatePersonalDetails.setString(17, studentID);
     if(rsGetPersonalDetailsID.next()) {
         int personalDetailsID = rsGetPersonalDetailsID.getInt("id");
         
-        // Update data in academic_qualifications table
-        String updateAcademicQualificationsQuery = "UPDATE academic_qualifications SET board_university=?, percentage_aggr=?, percentage_pcm=?, division=? WHERE personal_details_id=? AND class=10th";
+     // Update data in academic_qualifications table
+        String updateAcademicDetailsQuery = "UPDATE academic_qualifications SET class=?, board_university=?, percentage_aggr=?, percentage_pcm=?, division=? WHERE personal_details_id=?";
+        PreparedStatement psUpdateAcademicDetails = con.prepareStatement(updateAcademicDetailsQuery);
+        
+        psUpdateAcademicDetails.setString(1, "10th");
+        psUpdateAcademicDetails.setString(2, board10);
+        psUpdateAcademicDetails.setString(3, percentageAggr10);
+        psUpdateAcademicDetails.setString(4, percentagePCM10);
+        psUpdateAcademicDetails.setString(5, division10);
+        psUpdateAcademicDetails.setInt(6, personalDetailsID);
+        psUpdateAcademicDetails.executeUpdate();
+        
+        psUpdateAcademicDetails.setString(1, "12th");
+        psUpdateAcademicDetails.setString(2, board12);
+        psUpdateAcademicDetails.setString(3, percentageAggr12);
+        psUpdateAcademicDetails.setString(4, percentagePCM12);
+        psUpdateAcademicDetails.setString(5, division12);
+        psUpdateAcademicDetails.setInt(6, personalDetailsID);
+        psUpdateAcademicDetails.executeUpdate();
+        
+        psUpdateAcademicDetails.setString(1, "Diploma/Graduation");
+        psUpdateAcademicDetails.setString(2, boardGraduation);
+        psUpdateAcademicDetails.setString(3, percentageAggrGraduation);
+        psUpdateAcademicDetails.setString(4, percentagePCMGraduation);
+        psUpdateAcademicDetails.setString(5, divisionGraduation);
+        psUpdateAcademicDetails.setInt(6, personalDetailsID);
+        psUpdateAcademicDetails.executeUpdate();
 
-        PreparedStatement psUpdateAcademicQualifications = con.prepareStatement(updateAcademicQualificationsQuery);
-
-        // Update 10th Class record
-        psUpdateAcademicQualifications.setString(1, board10);
-        psUpdateAcademicQualifications.setString(2, percentageAggr10);
-        psUpdateAcademicQualifications.setString(3, percentagePCM10);
-        psUpdateAcademicQualifications.setString(4, division10);
-        psUpdateAcademicQualifications.setInt(5, personalDetailsID);
-        psUpdateAcademicQualifications.setString(6, "10th");
-        psUpdateAcademicQualifications.executeUpdate();
-
-        // Update 12th Class record
-        psUpdateAcademicQualifications.setString(1, board12);
-        psUpdateAcademicQualifications.setString(2, percentageAggr12);
-        psUpdateAcademicQualifications.setString(3, percentagePCM12);
-        psUpdateAcademicQualifications.setString(4, division12);
-        psUpdateAcademicQualifications.setInt(5, personalDetailsID);
-        psUpdateAcademicQualifications.setString(6, "12th");
-        psUpdateAcademicQualifications.executeUpdate();
-
-        // Update Diploma/Graduation record
-        psUpdateAcademicQualifications.setString(1, boardGraduation);
-        psUpdateAcademicQualifications.setString(2, percentageAggrGraduation);
-        psUpdateAcademicQualifications.setString(3, percentagePCMGraduation);
-        psUpdateAcademicQualifications.setString(4, divisionGraduation);
-        psUpdateAcademicQualifications.setInt(5, personalDetailsID);
-        psUpdateAcademicQualifications.setString(6, "Diploma/Graduation");
-        psUpdateAcademicQualifications.executeUpdate(); 
         
         out.println("<h2>Data updated successfully!</h2>");
     } else {
