@@ -138,7 +138,7 @@ body, html {
 
     </div>
   </div>
-  <div class="card"><img src="mentorloginregis.jpg"/>
+  <div class="card"><img src="mentor1.jpg"/>
     <div class="info">
       <h1>Mentor</h1>
       <a href="mentorLogin.jsp"><button>Login</button></a>

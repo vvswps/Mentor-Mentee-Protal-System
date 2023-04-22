@@ -25,9 +25,11 @@ try {
     if (rs.next()) {
         // Authentication successful, set session attribute and redirect to home page
         String name = rs.getString("name");
-	String email = rs.getString("email");
-	session.setAttribute("name", name);
-	session.setAttribute("email", email);
+		String email = rs.getString("email");
+		String phoneno = rs.getString("phoneno");
+		session.setAttribute("name", name);
+		session.setAttribute("email", email);
+		session.setAttribute("phoneno", phoneno);
         session.setAttribute("studentID", studentID);
         response.sendRedirect("studentaccount.jsp");
     } else {

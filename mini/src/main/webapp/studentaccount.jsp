@@ -1,14 +1,14 @@
 <%@ page language="java" %>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <title>Student Dashboard</title>
   <link rel="stylesheet" href="style.css" />
   <!-- Font Awesome Cdn Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+ 
  <style> /*  import google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 *{
@@ -30,7 +30,7 @@ nav{
   height: 100vh;
   left: 0;
   width: 90px;
-  background: #fff;
+  background: #007bff;
   overflow: hidden;
   transition: 1s;
 }
@@ -60,7 +60,7 @@ a{
   position: relative;
   width: 280px;
   font-size: 14px;
-  color: rgb(85, 83, 83);
+  color: black;
   display: table;
   padding: 10px;
 }
@@ -93,7 +93,6 @@ a:hover i{
   display: flex;
 }
 
-/* MAin Section */
 /* Main Section */
 .main{
   position: relative;
@@ -138,42 +137,35 @@ a:hover i{
       <ul>
         <li><a href="#" class="logo">
           <img src="user.png">
-          <span class="nav-item">Welcome!<%= session.getAttribute("name") %></span>
+          <span class="nav-item">Welcome!<br><%= session.getAttribute("name") %></span>
         </a></li>
-        <li><a href="#">
-          <i class="fas fa-menorah"></i>
-          <span class="nav-item">Dashboard</span>
-        </a></li>
-        <li><a href="#">
+        
+        <li><a href="#notifications" class="nav-link" onclick="loadContent('notificationsstudent')" data-name="Notifications">
           <i class="fas fa-bell"></i>
           <span class="nav-item">Notifications</span>
         </a></li>
-        <li><a href="#">
+        <li><a href="#mentorinformation" class="nav-link" onclick="loadContent('mentorinformation')" data-name="Mentor Information">
           <i class="fas fa-user"></i>
           <span class="nav-item">Mentor Information</span>
         </a></li>
-        <li><a href="#">
+        <li><a href="#personaldetails" class="nav-link" onclick="loadContent('personaldetailsstudent')" data-name="Personal Details">
           <i class="fas fa-info-circle"></i>
           <span class="nav-item">Personal Details</span>
         </a></li>
-        <li><a href="#">
+        <li><a href="#academicdetails" class="nav-link" onclick="loadContent('academicdetails')" data-name="Academic Details">
           <i class="fas fa-asterisk"></i>
           <span class="nav-item">Academic Details</span>
         </a></li>
-        <li><a href="#">
+        <li><a href="#progress" class="nav-link" onclick="loadContent('progressstudent')" data-name="Progress Report">
           <i class="fas fa-tasks"></i>
           <span class="nav-item">Progress</span>
         </a></li>
-        <li><a href="#">
-          <i class="fas fa-comment"></i>
-          <span class="nav-item">Feedback</span>
-        </a></li>
-        <li><a href="changePasswordstudent.jsp">
+        <li><a href="#changepassword" class="nav-link" onclick="loadContent('changePasswordstudent')" data-name="Change Password">
           <i class="fas fa-unlock-alt"></i>
           <span class="nav-item">Change Password</span>
         </a></li>
 
-        <li><a href="#" class="logout">
+        <li><a href="logOut.jsp" class="logout">
           <i class="fas fa-sign-out-alt"></i>
           <span class="nav-item">Log out</span>
         </a></li>
@@ -184,27 +176,36 @@ a:hover i{
     <section class="main">
   <div class="main-top">
     <h1>Dashboard</h1>
-	<p>Your email is <%= session.getAttribute("email") %>.</p>
+	<p>Your ERP ID is <%= session.getAttribute("studentID") %>.</p>
     
-
   </div>
-  
+  <div id="main-content"></div>
 </section>
-
- 
-    
   </div>
 <script>
-    const links = document.querySelectorAll('.nav-link');
-    const mainContent = document.querySelector('#main-content');
+  function loadContent(id) {
+    const contentDiv = document.querySelector('#main-content');
+    const url = id + '.jsp';
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        contentDiv.innerHTML = html;
+      });
+  }
 
-    links.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const href = link.getAttribute('href');
-            mainContent.innerHTML = `<object type="text/html" data="${href}" style="width:100%; height:100%"></object>`;
-        });
+  const links = document.querySelectorAll('.nav-link');
+  const mainContent = document.querySelector('.main-content');
+  const mainTitle = document.querySelector('.main-top h1');
+
+  links.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const href = link.getAttribute('href');
+      const name = link.getAttribute('data-name');
+      mainTitle.textContent = name;
+      mainContent.innerHTML = `<iframe src="${href}" style="width: 100%; height: 100%; border: none;"></iframe>`;
     });
+  });
 </script>
 
 </body>
