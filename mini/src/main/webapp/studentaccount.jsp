@@ -22,6 +22,7 @@
 }
 body{
   background: rgb(226, 226, 226);
+  
 }
 nav{
   position: sticky;
@@ -99,6 +100,9 @@ a:hover i{
   position: relative;
   padding: 20px;
   width: 100%;
+  background-image: url("studentdashboardmainbg.jpg");
+  
+  
 }
 .main-top{
   display: flex;
@@ -137,7 +141,7 @@ a:hover i{
   <div class="container">
     <nav>
       <ul>
-        <li><a href="#Welcome" class="logo" onclick="loadContent('welcomestudent')" data-name="Welcome!">
+        <li><a href="#Welcome" class="logo" onclick="loadContent('welcomestudent')" data-name="Welcome">
           <img src="user.png">
           <span class="nav-item">Welcome!<br><%= session.getAttribute("name") %></span>
         </a><br><br><br></li>

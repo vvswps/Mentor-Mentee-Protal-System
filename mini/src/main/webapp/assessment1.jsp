@@ -69,12 +69,23 @@
         input[type="submit"]:hover {
             background-color: #00008B;
         }
+        .button {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #Ff0000;
+			color: white;
+			text-align: center;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
     </style>
 </head>
 <body style="background-color:#007bff;">
 
 <div class="card">
-<form method="post" action="submitassessment1details.jsp">
+<form method="post" action="submitassessment1.jsp">
 <h2>Assessment during I Semester:</h2>
 
 <label for="accommodation">Accommodation:</label>
@@ -146,22 +157,22 @@
 <label for="absentDetained">N.B. Mark "A" if absent, mark "D" if detained</label><br>
 
 <h4>Attendance Record</h4>
-<label for="attendance1">A. Just before 1st Sessional<input type="text" required>% attendance. Detained from Sessional (Y/N)</label>
+<label for="attendance1">A. Just before 1st Sessional<input type="text" name="attendance1" required>% attendance. Detained from Sessional (Y/N)</label>
 
 <input type="checkbox" name="detained1" value="yes">Yes
 <input type="checkbox" name="detained1" value="no">No<br>
 
-<label for="attendance2">B. Just before 2nd Sessional<input type="text" required>% attendance. Detained from Sessional (Y/N)</label>
+<label for="attendance2">B. Just before 2nd Sessional<input type="text" name="attendance2" required>% attendance. Detained from Sessional (Y/N)</label>
 <input type="checkbox" name="detained2" value="yes">Yes
 <input type="checkbox" name="detained2" value="no">No<br>
 
-<label for="attendance3">C. Just before PUT<input type="text" required>%.Detained from Sessional (Y/N)</label>
+<label for="attendance3">C. Just before PUT<input type="text" name="attendance3" required>%.Detained from Sessional (Y/N)</label>
 <input type="checkbox" name="detained3" value="yes">Yes
 <input type="checkbox" name="detained3" value="no">No<br>
 
-<label for="attendance4">D. Overall remedial Class attendance, if any<input type="text" required>% .Overall Detained (Y/S)</label>
-<input type="checkbox" name="overallDetained" value="yes">Yes
-<input type="checkbox" name="overallDetained" value="no">No<br>
+<label for="attendance4">D. Overall remedial Class attendance, if any<input type="text" name="attendance4" required>% .Overall Detained (Y/S)</label>
+<input type="checkbox" name="overall_detained" value="yes">Yes
+<input type="checkbox" name="overall_detained" value="no">No<br>
 
 <h4>MooCs Courses/Coursera Certification Progress</h4>
 <table>
@@ -189,7 +200,6 @@
 <h4>1. Semester score card</h4>
 <table>
     <tr>
-      
       <th>External Marks</th>
       <th>Internal Marks</th>
       <th>Total Marks</th>
@@ -217,22 +227,21 @@
 <table>
     <tr>
     <th>Sub.code</th><th>Marks</th></tr><tr>
-    <td><input type="text" name="sub_code"></td>
-    <td><input type="text" name="sub_code"></td>
+    <td><input type="text" name="sub_code1"></td>
+    <td><input type="text" name="sub_code2"></td>
   </tr>
   <tr>
-    <td><input type="text" name="marks"></td>
-    <td><input type="text" name="marks"></td>
+    <td><input type="text" name="marks1"></td>
+    <td><input type="text" name="marks2"></td>
   </tr>
 </table>
 <h4>3. Any other Achievements</h4>
 <label for="achievements"></label><textarea name="achievements" rows="3" cols="7"></textarea>
 <br>
     <input type="submit" value="Submit">
+    <a href="viewassessment1details.jsp" target="_blank" class=button>View Previously saved details</a>
 </form>
 </div>
-
-
 	
 </body>
 </html>

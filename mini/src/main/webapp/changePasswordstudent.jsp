@@ -9,12 +9,15 @@ pageEncoding="UTF-8"%>
 	<style>
 	.card {
 		position: absolute;
-		max-width: 300px;
-		padding: 20px;
-		background-color: #ffffff;
-		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-		border-radius: 5px;
-		font-family: Arial, sans-serif;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 300px;
+	padding: 10px;
+	background-color: #ffffff;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	font-family: Arial, sans-serif;
 	}
 	label {
 		display: block;
