@@ -10,11 +10,10 @@
         .card {
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             padding: 20px;
-            width: 80%;
+            width: 97%;
             margin: auto;
-            margin-top: 50px;
+            margin-top: 0px;
         }
         
         /* CSS for the form elements */
@@ -71,18 +70,22 @@
         }
         .button {
 			display: inline-block;
-			padding: 10px 20px;
+			padding: 12px 20px;
 			background-color: #Ff0000;
-			color: white;
+			color: #fff;
 			text-align: center;
-			font-size: 16px;
+			font-size: 14px;
 			border: none;
-			border-radius: 5px;
+			border-radius: 4px;
 			cursor: pointer;
+			text-decoration: none;
 		}
+		.button:hover {
+            background-color: #8b0000;
+        }	
     </style>
 </head>
-<body style="background-color:#007bff;">
+<body>
 
 <div class="card">
 <form method="post" action="submitassessment1.jsp">
